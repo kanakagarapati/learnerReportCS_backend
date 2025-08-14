@@ -36,7 +36,10 @@ app.use("/attendance" , attendanceRoute)
 app.get("/", (req, res) => {
   res.send("Hello World! check");
 });
-
+// Health check endpoint
+app.get('/health', (_req, res) => {
+  res.status(200).send('OK');
+});
 app.listen(port, () => {
   connect();
   console.log(`Example app listening at http://localhost:3000`);
